@@ -10,7 +10,6 @@ function DisplaySide() {
         <div>Education</div>
         <div>Experience</div>
       </div>
-      
     </>
   )
 }
