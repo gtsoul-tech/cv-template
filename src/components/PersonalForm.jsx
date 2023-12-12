@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 import Input from "./Input"
 
 function PersonalForm({fullName,email,phoneNumber,address,handleChangeFullName,handleChangeEmail,handleChangePhoneNumber,handleChangeAddress}){
@@ -15,5 +15,14 @@ function PersonalForm({fullName,email,phoneNumber,address,handleChangeFullName,h
         </>
     )
 }
-    
+PersonalForm.propTypes = {
+    fullName: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phoneNumber:PropTypes.string.isRequired,
+    address:PropTypes.string.isRequired,
+    handleChangeAddress:PropTypes.func,
+    handleChangeEmail:PropTypes.func,
+    handleChangeFullName:PropTypes.func,
+    handleChangePhoneNumber:PropTypes.func
+}
 export default PersonalForm

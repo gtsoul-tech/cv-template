@@ -2,7 +2,7 @@
 import './DisplaySide.css'
 
 function DisplaySide() {
-
+    //props
   return (
     <>
       <div className='displaySide'>

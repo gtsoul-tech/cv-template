@@ -1,24 +1,7 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 import './EditSide.css'
 import PersonalForm from './PersonalForm'
-function EditSide() {
-    const [fullName, setText] = useState('');
-    const [email, setEmail] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [address, setAddress] = useState('');
-
-    function handleChangeFullName(e) {
-        setText(e.target.value);
-    }
-    function handleChangeEmail(e) {
-        setEmail(e.target.value);
-    }
-    function handleChangePhoneNumber(e) {
-        setPhoneNumber(e.target.value);
-    }
-    function handleChangeAddress(e) {
-        setAddress(e.target.value);
-    }
+function EditSide({fullName,email,phoneNumber,address,handleChangeFullName,handleChangeEmail,handleChangePhoneNumber,handleChangeAddress}) {
 
   return (
     <>
@@ -39,5 +22,14 @@ function EditSide() {
     </>
   )
 }
-
+EditSide.propTypes = {
+    fullName: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phoneNumber:PropTypes.string.isRequired,
+    address:PropTypes.string.isRequired,
+    handleChangeAddress:PropTypes.func,
+    handleChangeEmail:PropTypes.func,
+    handleChangeFullName:PropTypes.func,
+    handleChangePhoneNumber:PropTypes.func
+}
 export default EditSide
