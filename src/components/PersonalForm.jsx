@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types';
-import './EditSide.css'
+import '../styles/EditSide.css'
 import Input from "./Input"
 
-function PersonalForm({fullName,email,phoneNumber,address,handleChangeFullName,handleChangeEmail,handleChangePhoneNumber,handleChangeAddress}){
+function PersonalForm(props){
 
     return (
         <>
             <div className='personalDetails'>
                 <h3 id="personalTitle">Personal Details</h3>
-                <Input label="Full name" value={fullName} handleChange={handleChangeFullName} placeholder="First and last name" />
-                <Input label="Email" value={email} handleChange={handleChangeEmail} placeholder="Enter email" recommended={true} />
-                <Input label="Phone number" value={phoneNumber} handleChange={handleChangePhoneNumber} placeholder="Enter phone number" recommended={true} />
-                <Input label="Address" value={address} handleChange={handleChangeAddress} placeholder="City, Country" recommended={true} />
+                <Input label="Full name" value={props.fullName} handleChange={props.handleChangeFullName} placeholder="First and last name" />
+                <Input label="Email" value={props.email} handleChange={props.handleChangeEmail} placeholder="Enter email" recommended={true} />
+                <Input label="Phone number" value={props.phoneNumber} handleChange={props.handleChangePhoneNumber} placeholder="Enter phone number" recommended={true} />
+                <Input label="Address" value={props.address} handleChange={props.handleChangeAddress} placeholder="City, Country" recommended={true} />
             
             </div>
         </>

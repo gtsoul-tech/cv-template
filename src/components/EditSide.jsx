@@ -1,22 +1,23 @@
 import PropTypes from 'prop-types';
-import './EditSide.css'
+import '../styles/EditSide.css'
 import PersonalForm from './PersonalForm'
-function EditSide({fullName,email,phoneNumber,address,handleChangeFullName,handleChangeEmail,handleChangePhoneNumber,handleChangeAddress}) {
-
+import EducationForm from './EducationForm';
+function EditSide(props) {
   return (
     <>
       <div className='editSide'>
         <PersonalForm 
-        fullName={fullName}
-        email={email}
-        phoneNumber={phoneNumber}
-        address={address}
-        handleChangeAddress={handleChangeAddress}
-        handleChangeFullName={handleChangeFullName}
-        handleChangePhoneNumber={handleChangePhoneNumber}
-        handleChangeEmail={handleChangeEmail}
+        fullName={props.fullName}
+        email={props.email}
+        phoneNumber={props.phoneNumber}
+        address={props.address}
+        handleChangeAddress={props.handleChangeAddress}
+        handleChangeFullName={props.handleChangeFullName}
+        handleChangePhoneNumber={props.handleChangePhoneNumber}
+        handleChangeEmail={props.handleChangeEmail}
         ></PersonalForm>
-        <div>Education</div>
+        <EducationForm educationProps={props.educationProps}>
+        </EducationForm>
         <div>Experience</div>
       </div>
     </>

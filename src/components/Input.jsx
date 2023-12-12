@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import './EditSide.css'
+import '../styles/EditSide.css'
 function Input( { label,value,handleChange,placeholder,recommended=false }){
     
     return(

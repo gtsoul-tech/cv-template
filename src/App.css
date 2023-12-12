@@ -6,6 +6,7 @@
   --main-bg-color: white;
   --main-color: black;
   background-color: rgb(238, 241, 243);
+  height: 100vh;
 }
 
 .app{

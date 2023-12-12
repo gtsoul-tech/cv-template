@@ -1,5 +1,5 @@
 import PersonalDetails from './PersonalDetails'
-import './DisplaySide.css'
+import '../styles/DisplaySide.css'
 import PropTypes from 'prop-types';
 function DisplaySide({fullName,email,phoneNumber,address,handleChangeFullName,handleChangeEmail,handleChangePhoneNumber,handleChangeAddress}) {
     //props
@@ -7,15 +7,17 @@ function DisplaySide({fullName,email,phoneNumber,address,handleChangeFullName,ha
     <>
       <div className='displaySide'>
         
-        <PersonalDetails fullName={fullName}
+        <PersonalDetails 
+        fullName={fullName}
         email={email}
         phoneNumber={phoneNumber}
         address={address}
         handleChangeAddress={handleChangeAddress}
         handleChangeFullName={handleChangeFullName}
         handleChangePhoneNumber={handleChangePhoneNumber}
-        handleChangeEmail={handleChangeEmail}></PersonalDetails>
-    
+        handleChangeEmail={handleChangeEmail}>
+        </PersonalDetails>
+
       </div>
     </>
   )
