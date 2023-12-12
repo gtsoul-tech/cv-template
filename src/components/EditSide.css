@@ -1,0 +1,4 @@
+.editSide{
+    display: flex;
+    flex-direction: column;
+}

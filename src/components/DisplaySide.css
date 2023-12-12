@@ -1,0 +1,4 @@
+.displaySide{
+    display: flex;
+    flex-direction: column;
+}
