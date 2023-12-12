@@ -1,4 +1,27 @@
 .displaySide{
     display: flex;
     flex-direction: column;
+    background-color: inherit;
+    margin-left: 20px;
+}
+
+.personalDisplay{
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    padding: 20px;
+}
+.personalName{
+    padding-bottom: 10px;
+    font-size: x-large;
+    font-weight: bold;
+}
+.restPersonalDetails{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.detail{
+    display: flex;
 }

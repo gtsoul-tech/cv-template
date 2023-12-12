@@ -3,6 +3,7 @@ import './App.css'
 import { useState } from 'react';
 import EditSide from './components/EditSide'
 import DisplaySide from './components/DisplaySide'
+
 function App() {
   const [fullName, setText] = useState('');
   const [email, setEmail] = useState('');

@@ -31,6 +31,6 @@ Input.propTypes = {
     value: PropTypes.string.isRequired,
     handleChange:PropTypes.func,
     placeholder: PropTypes.string.isRequired,
-    recommended: PropTypes.string.isRequired
+    recommended: PropTypes.bool
 }
 export default Input
