@@ -12,10 +12,10 @@ function PersonalForm(props){
         <>
             <div className='personalDetails'>
                 <h3 id="personalTitle">Personal Details</h3>
-                <Input label="Full name" value={fullName} handleChange={props.handleChangeFullName} placeholder="First and last name" />
-                <Input label="Email" value={email} handleChange={props.handleChangeEmail} placeholder="Enter email" recommended={true} />
-                <Input label="Phone number" value={phoneNumber} handleChange={props.handleChangePhoneNumber} placeholder="Enter phone number" recommended={true} />
-                <Input label="Address" value={address} handleChange={props.handleChangeAddress} placeholder="City, Country" recommended={true} />
+                <Input label="Full name" value={fullName} handleChange={props.person.handleChangeFullName} placeholder="First and last name" />
+                <Input label="Email" value={email} handleChange={props.person.handleChangeEmail} placeholder="Enter email" recommended={true} />
+                <Input label="Phone number" value={phoneNumber} handleChange={props.person.handleChangePhoneNumber} placeholder="Enter phone number" recommended={true} />
+                <Input label="Address" value={address} handleChange={props.person.handleChangeAddress} placeholder="City, Country" recommended={true} />
             
             </div>
         </>

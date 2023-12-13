@@ -7,7 +7,12 @@ import PropTypes from 'prop-types';
 
 function EducationForm(props){
     const [show, setShow] = useState('');
-
+    const school=props.degree.school;
+    const degreeTitle=props.degree.degreeTitle;
+    const startDate=props.degree.startDate;
+    const endDate=props.degree.endDate;
+    const location=props.degree.location;
+ 
     
     return (
         <>
@@ -23,11 +28,11 @@ function EducationForm(props){
                 {show ? <>
                     <form action="" className='inputsEducation'>
 
-                    <Input label="School" value={props.school} handleChange={props.handleChangeSchool} placeholder="Enter school / university" />
-                    <Input label="Degree" value={props.degree} handleChange={props.handleChangeDegree} placeholder="Enter degree / Field Of Study" />
-                    <Input label="Start Date" value={props.startDate} handleChange={props.handleChangeStartDate} placeholder="Enter start date" />
-                    <Input label="End Date" value={props.endDate} handleChange={props.handleChangeEndDate} placeholder="Enter end date" />
-                    <Input label="Location" value={props.location} handleChange={props.handleChangeLocation} placeholder="Enter location" optional={false} />
+                    <Input label="School" value={school} handleChange={props.degree.handleChangeSchool} placeholder="Enter school / university" />
+                    <Input label="Degree" value={degreeTitle} handleChange={props.degree.handleChangeDegree} placeholder="Enter degree / Field Of Study" />
+                    <Input label="Start Date" value={startDate} handleChange={props.degree.handleChangeStartDate} placeholder="Enter start date" />
+                    <Input label="End Date" value={endDate} handleChange={props.degree.handleChangeEndDate} placeholder="Enter end date" />
+                    <Input label="Location" value={location} handleChange={props.degree.handleChangeLocation} placeholder="Enter location" optional={false} />
                     
                     <div className="formButtons">
                     <button onClick={() => setShow(!show)}>
@@ -48,11 +53,13 @@ function EducationForm(props){
     )
 }
 EducationForm.propTypes = {
-    school: PropTypes.string.isRequired,
-    degree: PropTypes.string.isRequired,
-    startDate: PropTypes.string.isRequired,
-    endDate:PropTypes.string.isRequired,
-    location:PropTypes.string.isRequired,
+
+    degree: PropTypes.object.isRequired,
+    school: PropTypes.string,
+    degreeTitle: PropTypes.string,
+    startDate: PropTypes.string,
+    endDate:PropTypes.string,
+    location:PropTypes.string,
     handleChangeSchool:PropTypes.func,
     handleChangeDegree:PropTypes.func,
     handleChangeStartDate:PropTypes.func,
