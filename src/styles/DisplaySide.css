@@ -3,12 +3,14 @@
     flex-direction: column;
     background-color: inherit;
     margin-left: 20px;
+    
 }
 
 .personalDisplay{
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
+    background-color: rgb(14, 55, 78);
+    color: var(--main-bg-color);
     padding: 20px;
 }
 .personalName{
@@ -18,10 +20,51 @@
 }
 .restPersonalDetails{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     padding-left: 10px;
     padding-right: 10px;
 }
 .detail{
     display: flex;
+}
+
+.educationDisplay{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--main-bg-color);
+    min-height: 80vh;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+}
+.educationDisplayTitle{
+    background-color: rgb(226, 217, 217);
+    color: var(--main-color);
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: medium;
+}
+.educationInfo{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: center;
+}
+.infoDate{
+    justify-self: flex-start;
+    font-size: small;
+}
+.infoTitle{
+    justify-self: flex-start;
+    font-size: larger;
+    font-weight: bold;
+}
+.infoLocation{
+    justify-self: flex-start;
+}
+.infoDescription{
+    justify-self: flex-start;
 }

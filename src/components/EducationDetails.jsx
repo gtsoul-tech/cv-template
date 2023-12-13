@@ -1,15 +1,33 @@
 import PropTypes from 'prop-types';
+import '../styles/DisplaySide.css';
+
 function EducationDetails(props){
-    const school=props.degree.school;
-    const degreeTitle=props.degree.degreeTitle;
-    const startDate=props.degree.startDate;
-    const endDate=props.degree.endDate;
-    const location=props.degree.location;
     
-    const degrees="";
+    const degrees= [];
+    degrees.push(props.degree);
     return(<>
         <div className='educationDisplay'>
+        {degrees.length >= 1 ? (
+            <>
+            <h2 className='educationDisplayTitle'> Education </h2>
+            {degrees.map((degree)=>{
+                return (
+                <>
+                    <div className='educationInfo'>
+                    <div className='infoDate'>{degree.startDate} - {degree.endDate}</div>
+                    <div className='infoTitle'> {degree.school}</div>
+                    <div className='infoLocation'>{degree.location}</div>
+                    <div className='infoDescription'>{degree.degreeTitle}</div>
+                    </div>
+                </>
+                );
+            })}
             
+            </>
+                ) : (
+                    <div>{' '}
+                    </div>
+                )}
         </div>
     </>)
 }
@@ -26,10 +44,4 @@ EducationDetails.propTypes = {
     handleChangeEndDate:PropTypes.func,
     handleChangeLocation:PropTypes.func,
 }
-export default EducationalDetails
-
-/*degrees.map( () => {
-            console.log("Entered");                 
-            // Return the element. Also pass key     
-            return (<Answer key={answer} answer={answer} />) 
-            }) */
+export default EducationDetails

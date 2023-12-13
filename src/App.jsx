@@ -73,7 +73,8 @@ function App() {
       }));
     },
   })
-      
+  const[degrees,setDegrees] = useState([])
+
   return (
     <>
       <div className='app'>
