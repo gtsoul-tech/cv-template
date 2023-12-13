@@ -13,8 +13,8 @@ function Input( { label,value,handleChange,placeholder,recommended=false }){
             </div>
         ) : (
             
-            <span>{label}
-            {' '}</span>
+            <div>{label}
+            {' '}</div>
         )}
         <input
             className='inputPersonal'

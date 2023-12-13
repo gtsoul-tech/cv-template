@@ -5,47 +5,62 @@ import EditSide from './components/EditSide'
 import DisplaySide from './components/DisplaySide'
 
 function App() {
-  const [fullName, setText] = useState('');
-  const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [address, setAddress] = useState('');
-
+  const[person,setPerson] = useState({
+    fullName:"",
+    email:"",
+    phoneNumber:"",
+    address:""
+  })
   function handleChangeFullName(e) {
-      setText(e.target.value);
+    setPerson({
+      ...person, // Copy the old fields
+      fullName: e.target.value // But override this one
+    });
   }
   function handleChangeEmail(e) {
-      setEmail(e.target.value);
+    setPerson({
+      ...person, // Copy the old fields
+      email: e.target.value // But override this one
+    });
   }
   function handleChangePhoneNumber(e) {
-      setPhoneNumber(e.target.value);
+    setPerson({
+      ...person, // Copy the old fields
+      phoneNumber: e.target.value // But override this one
+    });
   }
   function handleChangeAddress(e) {
-      setAddress(e.target.value);
+    setPerson({
+      ...person, // Copy the old fields
+      address: e.target.value // But override this one
+    });
   }
+
+  const[degree,setDegree] = useState({
+    school:"",
+    degree:"",
+    startDate:"",
+    endDate:"",
+    location:""
+  })
+  
+
 
 
   return (
     <>
       <div className='app'>
         <EditSide
-        fullName={fullName}
-        email={email}
-        phoneNumber={phoneNumber}
-        address={address}
+        person={person}
         handleChangeAddress={handleChangeAddress}
         handleChangeFullName={handleChangeFullName}
         handleChangePhoneNumber={handleChangePhoneNumber}
-        handleChangeEmail={handleChangeEmail}></EditSide>
+        handleChangeEmail={handleChangeEmail}
+        ></EditSide>
         
         <DisplaySide
-        fullName={fullName}
-        email={email}
-        phoneNumber={phoneNumber}
-        address={address}
-        handleChangeAddress={handleChangeAddress}
-        handleChangeFullName={handleChangeFullName}
-        handleChangePhoneNumber={handleChangePhoneNumber}
-        handleChangeEmail={handleChangeEmail}></DisplaySide>
+        person={person}>
+        </DisplaySide>
       </div>
       
     </>

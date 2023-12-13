@@ -4,32 +4,37 @@ import MobileSvg from "../assets/mobile.svg";
 import LocationSvg from "../assets/location.svg";
 
 function PersonalDetails(props){
+    const fullName = props.person.fullName;
+    const email = props.person.email;
+    const phoneNumber = props.person.phoneNumber;
+    const address = props.person.address;
+    
     return(<>
         <div className='personalDisplay'>
-            <div className="personalName">{props.fullName}</div>
+            <div className="personalName">{fullName}</div>
             <div className="restPersonalDetails">
-                {props.email!='' ? (
+                {email!='' ? (
                 <div className='detail'>
                     <img src={EmailSvg} alt="email icon" width="20px" height="20px"/>
-                    {' '}{props.email}{' '}
+                    {' '}{email}{' '}
                 </div>
                 ) : (
                     <div>{' '}
                     </div>
                 )}
-                {props.phoneNumber!='' ? (
+                {phoneNumber!='' ? (
                 <div className='detail'>
                     <img src={MobileSvg} alt="mobile icon" width="20px" height="20px"/>
-                    {' '}{props.phoneNumber}{' '}
+                    {' '}{phoneNumber}{' '}
                 </div>
                 ) : (
                     <div>{' '}
                     </div>
                 )}
-                {props.address!='' ? (
+                {address!='' ? (
                 <div className='detail'>
                     <img src={LocationSvg} alt="address icon" width="20px" height="20px"/>
-                    {' '}{props.address}{' '}
+                    {' '}{address}{' '}
                 </div>
                 ) : (
                     <div>{' '}
@@ -40,13 +45,10 @@ function PersonalDetails(props){
     </>)
 }
 PersonalDetails.propTypes = {
-    fullName: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    phoneNumber:PropTypes.string.isRequired,
-    address:PropTypes.string.isRequired,
-    handleChangeAddress:PropTypes.func,
-    handleChangeEmail:PropTypes.func,
-    handleChangeFullName:PropTypes.func,
-    handleChangePhoneNumber:PropTypes.func
+    person: PropTypes.object.isRequired,
+    fullName: PropTypes.string,
+    email: PropTypes.string,
+    phoneNumber:PropTypes.string,
+    address:PropTypes.string
 }
 export default PersonalDetails
