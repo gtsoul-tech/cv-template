@@ -37,7 +37,7 @@
 .educationForm{
     display: flex;
     flex-direction: column;
-    background-color: var(--main-bg-color);
+    background-color: inherit;
     border-radius: 20px;
     font-size: smaller;
     gap: 10px;
@@ -45,11 +45,28 @@
 .educationTitle{
     display: flex;
     align-items: center;
+    background-color: var(--main-bg-color);
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
 }
 .dropdownButton{
     display: flex;
     align-items: center;
     flex:1;
+    background-color: var(--main-bg-color);
+}
+.educationAdd{
+    display: flex;
+}
+.educationButtonAdd{
+    display: flex;
+    align-items: center;
+    flex:1;
+    background-color: var(--main-bg-color);
+}
+.educationInfoButton{
+    border-radius: 0%;
+    background-color: var(--main-bg-color);
 }
 .edutitle{
     flex:1;
@@ -59,6 +76,9 @@
     font-weight: bolder;
 }
 .inputsEducation{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius:20px;
+    background-color: var(--main-bg-color);
     display: flex;
     gap: 10px;
     flex-direction: column;

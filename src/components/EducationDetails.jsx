@@ -2,37 +2,49 @@ import PropTypes from 'prop-types';
 import '../styles/DisplaySide.css';
 
 function EducationDetails(props){
-    
-    const degrees= [];
+    /*
+    const degrees=[];
+    const degree2 ={
+        degreeId:2,
+        school:"University Of Thessaly",
+        degreeTitle:"Electrical and Computer Engineer",
+        startDate:"2016",
+        endDate:"2021",
+        location:"Volos, Gr"
+    }
+
     degrees.push(props.degree);
+    degrees.push(degree2);
+    */
+   
     return(<>
         <div className='educationDisplay'>
-        {degrees.length >= 1 ? (
-            <>
+        {props.degrees.length >= 1 ? (
+            <div>
             <h2 className='educationDisplayTitle'> Education </h2>
-            {degrees.map((degree)=>{
+            {props.degrees.map((current)=>{
                 return (
-                <>
-                    <div className='educationInfo'>
-                    <div className='infoDate'>{degree.startDate} - {degree.endDate}</div>
-                    <div className='infoTitle'> {degree.school}</div>
-                    <div className='infoLocation'>{degree.location}</div>
-                    <div className='infoDescription'>{degree.degreeTitle}</div>
+                    <div key={current.id} className='educationInfo'>
+                        <div className='infoDate'>{current.degree.startDate} - {current.degree.endDate}</div>
+                        <div className='infoTitle'> {current.degree.school}</div>
+                        <div className='infoLocation'>{current.degree.location}</div>
+                        <div className='infoDescription'>{current.degree.degreeTitle}</div>
                     </div>
-                </>
                 );
             })}
-            
-            </>
+                
+            </div>
                 ) : (
                     <div>{' '}
                     </div>
                 )}
+            
         </div>
     </>)
 }
 EducationDetails.propTypes = {
-    degree: PropTypes.object.isRequired,
+    degrees:PropTypes.array,
+    //degree: PropTypes.object.isRequired,
     school: PropTypes.string,
     degreeTitle: PropTypes.string,
     startDate: PropTypes.string,
@@ -45,3 +57,15 @@ EducationDetails.propTypes = {
     handleChangeLocation:PropTypes.func,
 }
 export default EducationDetails
+
+/*<div key={0} className='educationInfo'>
+                    {props.degree.endDate !== "" ? (
+                        <div className='infoDate'>{props.degree.startDate} - {props.degree.endDate}</div>) 
+                    : (
+                        <div className='infoDate'>{props.degree.startDate}</div>
+                    )}
+                    
+                    <div className='infoTitle'> {props.degree.school}</div>
+                    <div className='infoLocation'>{props.degree.location}</div>
+                    <div className='infoDescription'>{props.degree.degreeTitle}</div>
+                </div>*/
