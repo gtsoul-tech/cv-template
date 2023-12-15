@@ -25,7 +25,11 @@ function EducationDetails(props){
             {props.degrees.map((current)=>{
                 return (
                     <div key={current.id} className='educationInfo'>
-                        <div className='infoDate'>{current.degree.startDate} - {current.degree.endDate}</div>
+                        <div className='infoDate'>
+                            {current.degree.startDate}
+                            {current.degree.startDate && current.degree.endDate ? " - " : " "}
+                            {current.degree.endDate}
+                        </div>
                         <div className='infoTitle'> {current.degree.school}</div>
                         <div className='infoLocation'>{current.degree.location}</div>
                         <div className='infoDescription'>{current.degree.degreeTitle}</div>
@@ -57,15 +61,3 @@ EducationDetails.propTypes = {
     handleChangeLocation:PropTypes.func,
 }
 export default EducationDetails
-
-/*<div key={0} className='educationInfo'>
-                    {props.degree.endDate !== "" ? (
-                        <div className='infoDate'>{props.degree.startDate} - {props.degree.endDate}</div>) 
-                    : (
-                        <div className='infoDate'>{props.degree.startDate}</div>
-                    )}
-                    
-                    <div className='infoTitle'> {props.degree.school}</div>
-                    <div className='infoLocation'>{props.degree.location}</div>
-                    <div className='infoDescription'>{props.degree.degreeTitle}</div>
-                </div>*/

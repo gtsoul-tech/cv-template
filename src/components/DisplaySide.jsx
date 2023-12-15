@@ -23,7 +23,3 @@ DisplaySide.propTypes = {
     degrees:PropTypes.array
 }
 export default DisplaySide
-
-//dinw ena set apo school
-//tha kanw display loopa ta palia sto set
-// kai ena kainourgio panta

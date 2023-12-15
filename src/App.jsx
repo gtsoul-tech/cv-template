@@ -45,24 +45,44 @@ function App() {
     location:"",
   }
   const[degrees,setDegrees] = useState([
-    { id: degreeId++, degree: degree }
+    { id: degreeId, degree: degree }
   ]);
-  
-  function handleSaveDegrees(degree){
+  function handleSaveDegrees(){
+    degreeId=degreeId+1;
     setDegrees(// Replace the state
       [ // with a new array
         ...degrees, // that contains all the old items
-        { id: degreeId++, degree: degree } // and one new item at the end
+        { id: degreeId, degree: degree } // and one new item at the end
       ]
     );
   }
-  
-  function handleEditDegrees(degree,degreeId){
+  function handleDeleteDegrees(id){
+    setDegrees(
+      degrees.filter(c =>
+        c.id !== id
+      )
+    );
+  }
+  function handleEditDegrees(event,currentDegreeId=degreeId){
+    const value = event.target.value;
+    const key = event.target.getAttribute('name');
+    
+    
+    const found = degrees.find((current) => current.id === currentDegreeId);
+    if(!found){
+      setDegrees(// Replace the state
+        [ // with a new array
+          ...degrees, // that contains all the old items
+          { id: currentDegreeId, degree: degree } // and one new item at the end
+        ]
+      );
+    }
+    
     const nextDegrees = degrees.map( (current) => {
-      if(current.id === degreeId ){
-        return { id:degreeId, degree:degree};
+      if(current.id === currentDegreeId ){
+        current.degree[key] = value;
+        return { id: current.id, degree:current.degree};
       } else {
-
         return current;
       }
     });
@@ -71,36 +91,23 @@ function App() {
         ...nextDegrees
       ]
     );
-    console.log(nextDegrees);
-    console.log(degrees);
     
   }
-  /*
-  function handleDeleteDegrees(current){
-    setDegrees(
-      degrees.filter(d =>
-        d.id !== current.id
-      )
-    );
-    setDegrees(// Replace the state
-      [ // with a new array
-        ...degrees, // that contains all the old items
-        { id: degreeId++, degree: degree } // and one new item at the end
-      ]
-    );
-  }*/
-
+  
   return (
     <>
       <div className='app'>
+        {console.log(degrees)}
+        {console.log(degreeId)}
+        
         <EditSide
         person={person}
         //degree={degree}
-        degreeId={degreeId}
         degrees={degrees}
+        degreeId={degreeId}
         handleEditDegrees={handleEditDegrees}
         handleSaveDegrees={handleSaveDegrees}
-        //handleDeleteDegree={handleDeleteDegrees}
+        handleDeleteDegrees={handleDeleteDegrees}
         ></EditSide>
         
         <DisplaySide

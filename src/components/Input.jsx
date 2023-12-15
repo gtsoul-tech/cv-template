@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import '../styles/EditSide.css'
-function Input( { label,value,handleChange,placeholder,recommended=false }){
+function Input( { label,value,name,handleChange,placeholder,recommended=false }){
     
     return(
         <>
@@ -21,6 +21,7 @@ function Input( { label,value,handleChange,placeholder,recommended=false }){
             value={value}
             onChange={handleChange}
             placeholder={placeholder}
+            name={name}
         />
         </label>
         </>
@@ -29,6 +30,7 @@ function Input( { label,value,handleChange,placeholder,recommended=false }){
 Input.propTypes = {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
+    name: PropTypes.string,
     handleChange:PropTypes.func,
     placeholder: PropTypes.string.isRequired,
     recommended: PropTypes.bool

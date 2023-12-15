@@ -51,6 +51,7 @@
     grid-template-rows: 1fr 1fr;
     margin-left: 20px;
     margin-right: 20px;
+    gap:10px;
     align-items: center;
 }
 .infoDate{
