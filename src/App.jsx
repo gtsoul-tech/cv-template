@@ -207,8 +207,8 @@ function App() {
         
         <DisplaySide
         person={person}
-        //degree={degree}
         degrees={degrees}
+        experiences={experiences}
         ></DisplaySide>
       </div>
       

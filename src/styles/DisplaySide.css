@@ -1,9 +1,14 @@
 .displaySide{
     display: flex;
     flex-direction: column;
-    background-color: inherit;
+    background-color: var(--main-bg-color);
     margin-left: 20px;
+    min-width: 400px;
+    max-width: 480px;
     
+    min-height: 780px;
+    max-height: 800px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .personalDisplay{
@@ -27,16 +32,14 @@
 }
 .detail{
     display: flex;
+    font-size: smaller;
 }
 
-.educationDisplay{
+.sectionDisplay{
     display: flex;
     flex-direction: column;
     gap: 10px;
     background-color: var(--main-bg-color);
-    min-height: 80vh;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-
 }
 .educationDisplayTitle{
     background-color: rgb(226, 217, 217);
@@ -49,6 +52,15 @@
     display: grid;
     grid-template-columns: 0.5fr 2fr;
     grid-template-rows: 1fr 1fr;
+    margin-left: 20px;
+    margin-right: 20px;
+    gap:10px;
+    align-items: center;
+}
+.experienceInfo{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
     margin-left: 20px;
     margin-right: 20px;
     gap:10px;
