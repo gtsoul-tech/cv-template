@@ -4,6 +4,7 @@ import { useState } from 'react';
 import EditSide from './components/EditSide'
 import DisplaySide from './components/DisplaySide'
 let degreeId=0;
+let experienceId=0;
 function App() {
   const[person,setPerson] = useState({
     fullName:"",
@@ -44,10 +45,21 @@ function App() {
     endDate:"",
     location:"",
   }
+  const experience = {
+    company:"",
+    position:"",
+    startDate:"",
+    endDate:"",
+    location:"",
+    description:""
+  }
+
   const[degrees,setDegrees] = useState([
     { id: degreeId, degree: degree }
   ]);
-  
+  const[experiences,setExperiences] = useState([
+    { id: experienceId, experience: experience }
+  ]);
   function handleSaveDegrees(){
     degreeId=degreeId+1;
     setDegrees(// Replace the state
@@ -109,8 +121,69 @@ function App() {
     );
   }
   function handleCancelDegrees(){
-    
     handleResetDegrees()
+  }
+  function handleSaveExperiences(){
+    experienceId=experienceId+1;
+    setExperiences(// Replace the state
+      [ // with a new array
+        ...experiences, // that contains all the old items
+        { id: experienceId, experience: experience } // and one new item at the end
+      ]
+    );
+  }
+  function handleDeleteExperiences(id){
+    setExperiences(
+      experiences.filter(c =>
+        c.id !== id
+      )
+    );
+  }
+  function handleEditExperiences(event,currentExperienceId=experienceId){
+    const value = event.target.value;
+    const key = event.target.getAttribute('name');
+    
+    const found = experiences.find((current) => current.id === currentExperienceId);
+    if(!found){
+      setExperiences(// Replace the state
+        [ // with a new array
+          ...experiences, // that contains all the old items
+          { id: currentExperienceId, experience: experience } // and one new item at the end
+        ]
+      );
+    }
+    
+    const nextExperiences = experiences.map( (current) => {
+      if(current.id === currentExperienceId ){
+        current.experience[key] = value;
+        return { id: current.id, experience:current.experience};
+      } else {
+        return current;
+      }
+    });
+    setExperiences(// Replace the state
+      [ // with a new array
+        ...nextExperiences
+      ]
+    );
+    
+  }
+  function handleResetExperiences(){
+    const nextExperiences = experiences.map( (current) => {
+      if(current.id === experienceId ){
+        return { id: current.id, experience:experience};
+      } else {
+        return current;
+      }
+    });
+    setExperiences(// Replace the state
+      [ // with a new array
+        ...nextExperiences
+      ]
+    );
+  }
+  function handleCancelExperiences(){
+    handleResetExperiences()
   }
   return (
     <>
@@ -120,10 +193,16 @@ function App() {
         //degree={degree}
         degrees={degrees}
         degreeId={degreeId}
+        experienceId={experienceId}
+        experiences={experiences}
         handleEditDegrees={handleEditDegrees}
         handleSaveDegrees={handleSaveDegrees}
         handleDeleteDegrees={handleDeleteDegrees}
         handleCancelDegrees={handleCancelDegrees}
+        handleSaveExperiences={handleSaveExperiences}
+        handleDeleteExperiences={handleDeleteExperiences}
+        handleEditExperiences={handleEditExperiences}
+        handleCancelExperiences={handleCancelExperiences}
         ></EditSide>
         
         <DisplaySide
