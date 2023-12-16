@@ -19,7 +19,7 @@ function EducationDetails(props){
    
     return(<>
         <div className='educationDisplay'>
-        {props.degrees.length >= 1 ? (
+        {props.degrees.length > 1 ? (
             <div>
             <h2 className='educationDisplayTitle'> Education </h2>
             {props.degrees.map((current)=>{
@@ -48,16 +48,10 @@ function EducationDetails(props){
 }
 EducationDetails.propTypes = {
     degrees:PropTypes.array,
-    //degree: PropTypes.object.isRequired,
     school: PropTypes.string,
     degreeTitle: PropTypes.string,
     startDate: PropTypes.string,
     endDate:PropTypes.string,
-    location:PropTypes.string,
-    handleChangeSchool:PropTypes.func,
-    handleChangeDegree:PropTypes.func,
-    handleChangeStartDate:PropTypes.func,
-    handleChangeEndDate:PropTypes.func,
-    handleChangeLocation:PropTypes.func,
+    location:PropTypes.string
 }
 export default EducationDetails
