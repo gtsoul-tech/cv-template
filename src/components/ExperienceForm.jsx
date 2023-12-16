@@ -58,7 +58,6 @@ function ExperienceForm(props){
                                       setEditExperienceId(current.id)
                                       setShowExperienceForm(false)
                                       setShowEditExperienceForm(true)
-                                      handleSetShow(false)
                                       }} className='educationInfoButton'>
                                       <div className='infoTitle'> {current.experience.company}</div>
                                     </button>
@@ -68,7 +67,7 @@ function ExperienceForm(props){
                               </div>
                             );
                         })}
-                        
+                    {!showEditExperienceForm ?
                     <div className='educationAdd'>
                         <button className='educationButtonAdd' onClick={() => {
                           setEditExperienceId(props.experienceId)
@@ -77,10 +76,11 @@ function ExperienceForm(props){
                           }}>
                           {showExperienceForm ? "-  New Experience" : "+ New Experience"}
                         </button>
-                    </div>
+                    </div>:null}
 
                 </>: null}
-                    {showExperienceForm && !props.showBoth.edu? <>
+                          {console.log(props.showBoth)}
+                    {showExperienceForm && !props.showBoth.edu && props.showBoth.exp? <>
                         <SectionExpForm 
                         handleSetShowExperienceForm={handleSetShowExperienceForm}
                         handleSetShow={handleSetShow}
@@ -97,7 +97,7 @@ function ExperienceForm(props){
                     </>: 
                         null
                     }
-                    {showEditExperienceForm && !props.showBoth.edu? <>
+                    {showEditExperienceForm && !props.showBoth.edu && props.showBoth.exp? <>
                         <SectionExpForm 
                         handleSetShowExperienceForm={handleSetShowExperienceForm}
                         handleSetShow={handleSetShow}

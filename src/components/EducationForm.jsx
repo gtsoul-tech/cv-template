@@ -60,7 +60,6 @@ function EducationForm(props){
                                       setEditDegreeId(current.id)
                                       setShowDegreeForm(false)
                                       setShowEditDegreeForm(true)
-                                      handleSetShow(false)
                                       }} className='educationInfoButton'>
                                       <div className='infoTitle'> {current.degree.school}</div>
                                     </button>
@@ -70,7 +69,7 @@ function EducationForm(props){
                               </div>
                             );
                         })}
-                        
+                    {!showEditDegreeForm ?
                     <div className='educationAdd'>
                         <button className='educationButtonAdd' onClick={() => {
                           setEditDegreeId(props.degreeId)
@@ -79,10 +78,10 @@ function EducationForm(props){
                           }}>
                           {showDegreeForm ? "-  New Degree" : "+ New Degree"}
                         </button>
-                    </div>
+                    </div> :null}
 
                 </>: null}
-                    {showDegreeForm && !props.showBoth.exp? <>
+                    {showDegreeForm && !props.showBoth.exp && props.showBoth.edu? <>
                         <SectionEduForm 
                           handleSetShowDegreeForm={handleSetShowDegreeForm}
                           handleSetShow={handleSetShow}
@@ -99,7 +98,7 @@ function EducationForm(props){
                     </>: 
                         null
                     }
-                    {showEditDegreeForm && !props.showBoth.exp? <>
+                    {showEditDegreeForm && !props.showBoth.exp && props.showBoth.edu? <>
                         <SectionEduForm 
                           handleSetShowDegreeForm={handleSetShowDegreeForm}
                           handleSetShow={handleSetShow}
