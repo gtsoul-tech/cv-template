@@ -6,7 +6,7 @@ import SectionEduForm from './SectionEduForm';
 import PropTypes from 'prop-types';
 
 function EducationForm(props){
-    const [show, setShow] = useState('');
+    
     const [showDegreeForm,setShowDegreeForm] = useState("");
     const [showEditDegreeForm,setShowEditDegreeForm] = useState("");
     const [editDegreeId,setEditDegreeId] = useState(props.degreeId);
@@ -24,7 +24,11 @@ function EducationForm(props){
       setShowDegreeForm(boolean)
     }
     function handleSetShow(boolean){
-      setShow(boolean)
+      if(boolean=== true){
+        props.handleSetShowBoth(true,false)
+      }else if(boolean=== false){
+        props.handleSetShowBoth(false,false)
+      }
     }
     function cancelEditDegrees(){
       props.handleCancelDegrees();
@@ -38,15 +42,15 @@ function EducationForm(props){
             <div className='educationForm'>
             <div className='educationTitle'>
                     <button className='dropdownButton' onClick={() => {
-                        setShow(!show)
+                        handleSetShow(!props.showBoth.edu)
                         setShowDegreeForm(false)
                         setShowEditDegreeForm(false)}}>
                         <img src={HatSvg} alt="hat icon" width="30px" height="30px"/>
                         <h3 className='edutitle'>Education</h3>
-                        <div className='symbolButton'>{show ? "↑" : "↓"}</div>
+                        <div className='symbolButton'>{props.showBoth.edu ? "↑" : "↓"}</div>
                     </button>
                 </div>
-                {show ?<>
+                {props.showBoth.edu ?<>
                     
                         {props.degrees.map((current)=>{
                             return (
@@ -56,7 +60,7 @@ function EducationForm(props){
                                       setEditDegreeId(current.id)
                                       setShowDegreeForm(false)
                                       setShowEditDegreeForm(true)
-                                      setShow(false)
+                                      handleSetShow(false)
                                       }} className='educationInfoButton'>
                                       <div className='infoTitle'> {current.degree.school}</div>
                                     </button>
@@ -78,7 +82,7 @@ function EducationForm(props){
                     </div>
 
                 </>: null}
-                    {showDegreeForm? <>
+                    {showDegreeForm && !props.showBoth.exp? <>
                         <SectionEduForm 
                           handleSetShowDegreeForm={handleSetShowDegreeForm}
                           handleSetShow={handleSetShow}
@@ -95,7 +99,7 @@ function EducationForm(props){
                     </>: 
                         null
                     }
-                    {showEditDegreeForm? <>
+                    {showEditDegreeForm && !props.showBoth.exp? <>
                         <SectionEduForm 
                           handleSetShowDegreeForm={handleSetShowDegreeForm}
                           handleSetShow={handleSetShow}
@@ -124,5 +128,7 @@ EducationForm.propTypes = {
     handleDeleteDegrees:PropTypes.func,
     handleCancelDegrees:PropTypes.func,
     handleResetDegrees:PropTypes.func,
+    handleSetShowBoth:PropTypes.func,
+    showBoth:PropTypes.any,
 }
 export default EducationForm

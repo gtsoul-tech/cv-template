@@ -5,7 +5,6 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import SectionExpForm from './SectionExpForm';
 function ExperienceForm(props){
-    const [show, setShow] = useState('');
     const [showExperienceForm,setShowExperienceForm] = useState("");
     const [showEditExperienceForm,setShowEditExperienceForm] = useState("");
     const [editExperienceId,setEditExperienceId] = useState(props.experienceId);
@@ -23,7 +22,11 @@ function ExperienceForm(props){
       setShowExperienceForm(boolean)
     }
     function handleSetShow(boolean){
-      setShow(boolean)
+      if(boolean=== true){
+        props.handleSetShowBoth(false,true)
+      }else if(boolean=== false){
+        props.handleSetShowBoth(false,false)
+      }
     }
     function cancelEditExperiences(){
       props.handleCancelExperiences();
@@ -37,15 +40,15 @@ function ExperienceForm(props){
             <div className='educationForm'>
             <div className='educationTitle'>
                     <button className='dropdownButton' onClick={() => {
-                        setShow(!show)
+                        handleSetShow(!props.showBoth.exp)
                         setShowExperienceForm(false)
                         setShowEditExperienceForm(false)}}>
                         <img src={WorkSvg} alt="work icon" width="30px" height="30px"/>
                         <h3 className='edutitle'>Experience</h3>
-                        <div className='symbolButton'>{show ? "↑" : "↓"}</div>
+                        <div className='symbolButton'>{props.showBoth.exp ? "↑" : "↓"}</div>
                     </button>
                 </div>
-                {show ?<>
+                {props.showBoth.exp ?<>
                     
                         {props.experiences.map((current)=>{
                             return (
@@ -55,7 +58,7 @@ function ExperienceForm(props){
                                       setEditExperienceId(current.id)
                                       setShowExperienceForm(false)
                                       setShowEditExperienceForm(true)
-                                      setShow(false)
+                                      handleSetShow(false)
                                       }} className='educationInfoButton'>
                                       <div className='infoTitle'> {current.experience.company}</div>
                                     </button>
@@ -77,7 +80,7 @@ function ExperienceForm(props){
                     </div>
 
                 </>: null}
-                    {showExperienceForm? <>
+                    {showExperienceForm && !props.showBoth.edu? <>
                         <SectionExpForm 
                         handleSetShowExperienceForm={handleSetShowExperienceForm}
                         handleSetShow={handleSetShow}
@@ -94,7 +97,7 @@ function ExperienceForm(props){
                     </>: 
                         null
                     }
-                    {showEditExperienceForm? <>
+                    {showEditExperienceForm && !props.showBoth.edu? <>
                         <SectionExpForm 
                         handleSetShowExperienceForm={handleSetShowExperienceForm}
                         handleSetShow={handleSetShow}
@@ -123,5 +126,7 @@ ExperienceForm.propTypes = {
     handleDeleteExperiences:PropTypes.func,
     handleCancelExperiences:PropTypes.func,
     handleResetExperiences:PropTypes.func,
+    handleSetShowBoth:PropTypes.func,
+    showBoth:PropTypes.any,
 }
 export default ExperienceForm

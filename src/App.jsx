@@ -185,6 +185,16 @@ function App() {
   function handleCancelExperiences(){
     handleResetExperiences()
   }
+
+
+
+  const [showBoth, setShowBoth] = useState({ edu:false, exp:false});
+  function handleSetShowBoth(edu,exp){
+    setShowBoth({
+      edu:edu,
+      exp:exp
+    })
+  }
   return (
     <>
       <div className='app'>
@@ -203,6 +213,8 @@ function App() {
         handleDeleteExperiences={handleDeleteExperiences}
         handleEditExperiences={handleEditExperiences}
         handleCancelExperiences={handleCancelExperiences}
+        handleSetShowBoth={handleSetShowBoth}
+        showBoth={showBoth}
         ></EditSide>
         
         <DisplaySide
