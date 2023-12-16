@@ -65,23 +65,26 @@
     margin-right: 20px;
     column-gap: 10px;
     align-items: center;
-    justify-content: flex-start;
 }
 .infoDate{
     align-self: flex-start;
     font-size: small;
 }
 .infoTitle{
+    display: flex;
     justify-self: flex-start;
     font-size: medium;
     font-weight: bold;
 }
 .infoLocation{
+    display: flex;
     justify-self: flex-start;
     font-size: smaller;
 }
 .infoDescription{
-    justify-self: flex-start;
+    display: flex;
+    justify-content:flex-start;
+    text-align:start;
     font-size: smaller;
 }
 .infoTitlePosition{
