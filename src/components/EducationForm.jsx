@@ -27,13 +27,10 @@ function EducationForm(props){
       setShow(boolean)
     }
     function cancelEditDegrees(){
-      console.log("1")
-        //keep old info
-
+      props.handleCancelDegrees();
     }
     function cancelNewDegrees(){
-      console.log("1")
-        //blank form
+      props.handleCancelDegrees();
     }
 
     return (
@@ -75,7 +72,6 @@ function EducationForm(props){
                           setEditDegreeId(props.degreeId)
                           setShowEditDegreeForm(false)
                           setShowDegreeForm(!showDegreeForm)
-                          setShow(false)
                           }}>
                           {showDegreeForm ? "-  New Degree" : "+ New Degree"}
                         </button>
@@ -91,10 +87,10 @@ function EducationForm(props){
                           lastDegreeId={editDegreeId}
                           handleSaveDegrees={props.handleSaveDegrees}
                           handleEditDegrees={props.handleEditDegrees}
-                          handleDeleteDegrees={props.handleDeleteDegrees}
+                          handleDeleteDegrees={cancelNewDegrees}
                           handleSetShowEditDegreeForm={handleSetShowEditDegreeForm}
                           handleSubmit={handleSubmit}
-                          handleCancelDegrees={cancelEditDegrees}
+                          cancelDegrees={cancelEditDegrees}
                         ></SectionEduForm>
                     </>: 
                         null
@@ -106,12 +102,12 @@ function EducationForm(props){
                           degrees={props.degrees}
                           showDegreeForm={showDegreeForm}
                           lastDegreeId={editDegreeId}
-                          handleSaveDegrees={props.handleSaveDegrees}
+                          handleSaveDegrees={cancelNewDegrees}
                           handleEditDegrees={props.handleEditDegrees}
                           handleDeleteDegrees={props.handleDeleteDegrees}
                           handleSetShowEditDegreeForm={handleSetShowEditDegreeForm}
                           handleSubmit={handleSubmit}
-                          handleCancelDegrees={cancelNewDegrees}
+                          cancelDegrees={cancelNewDegrees}
                         ></SectionEduForm>
                     </>: 
                         null
@@ -127,5 +123,7 @@ EducationForm.propTypes = {
     handleSaveDegrees:PropTypes.func,
     handleEditDegrees:PropTypes.func,
     handleDeleteDegrees:PropTypes.func,
+    handleCancelDegrees:PropTypes.func,
+    handleResetDegrees:PropTypes.func,
 }
 export default EducationForm

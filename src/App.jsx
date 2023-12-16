@@ -47,6 +47,7 @@ function App() {
   const[degrees,setDegrees] = useState([
     { id: degreeId, degree: degree }
   ]);
+  
   function handleSaveDegrees(){
     degreeId=degreeId+1;
     setDegrees(// Replace the state
@@ -93,13 +94,27 @@ function App() {
     );
     
   }
-  
+  function handleResetDegrees(){
+    const nextDegrees = degrees.map( (current) => {
+      if(current.id === degreeId ){
+        return { id: current.id, degree:degree};
+      } else {
+        return current;
+      }
+    });
+    setDegrees(// Replace the state
+      [ // with a new array
+        ...nextDegrees
+      ]
+    );
+  }
+  function handleCancelDegrees(){
+    
+    handleResetDegrees()
+  }
   return (
     <>
       <div className='app'>
-        {console.log(degrees)}
-        {console.log(degreeId)}
-        
         <EditSide
         person={person}
         //degree={degree}
@@ -108,6 +123,7 @@ function App() {
         handleEditDegrees={handleEditDegrees}
         handleSaveDegrees={handleSaveDegrees}
         handleDeleteDegrees={handleDeleteDegrees}
+        handleCancelDegrees={handleCancelDegrees}
         ></EditSide>
         
         <DisplaySide
