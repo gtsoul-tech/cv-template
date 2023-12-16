@@ -2,7 +2,7 @@
 import '../styles/EditSide.css'
 import HatSvg from "../assets/hat.svg";
 import { useState } from 'react';
-import Form from './Form';
+import SectionEduForm from './SectionEduForm';
 import PropTypes from 'prop-types';
 
 function EducationForm(props){
@@ -83,7 +83,7 @@ function EducationForm(props){
 
                 </>: null}
                     {showDegreeForm? <>
-                        <Form 
+                        <SectionEduForm 
                           handleSetShowDegreeForm={handleSetShowDegreeForm}
                           handleSetShow={handleSetShow}
                           degrees={props.degrees}
@@ -95,12 +95,12 @@ function EducationForm(props){
                           handleSetShowEditDegreeForm={handleSetShowEditDegreeForm}
                           handleSubmit={handleSubmit}
                           handleCancelDegrees={cancelEditDegrees}
-                        ></Form>
+                        ></SectionEduForm>
                     </>: 
                         null
                     }
                     {showEditDegreeForm? <>
-                        <Form 
+                        <SectionEduForm 
                           handleSetShowDegreeForm={handleSetShowDegreeForm}
                           handleSetShow={handleSetShow}
                           degrees={props.degrees}
@@ -112,7 +112,7 @@ function EducationForm(props){
                           handleSetShowEditDegreeForm={handleSetShowEditDegreeForm}
                           handleSubmit={handleSubmit}
                           handleCancelDegrees={cancelNewDegrees}
-                        ></Form>
+                        ></SectionEduForm>
                     </>: 
                         null
                     }
