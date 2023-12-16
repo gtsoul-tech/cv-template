@@ -118,7 +118,6 @@ function EducationForm(props){
 }
 EducationForm.propTypes = {
     degrees:PropTypes.array,
-    //degree: PropTypes.object.isRequired,
     degreeId:PropTypes.any,
     handleSaveDegrees:PropTypes.func,
     handleEditDegrees:PropTypes.func,
