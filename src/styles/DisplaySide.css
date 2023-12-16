@@ -3,8 +3,8 @@
     flex-direction: column;
     background-color: var(--main-bg-color);
     margin-left: 20px;
-    min-width: 400px;
-    max-width: 480px;
+    min-width: 520px;
+    max-width: 540px;
     
     min-height: 780px;
     max-height: 800px;
@@ -38,7 +38,7 @@
 .sectionDisplay{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     background-color: var(--main-bg-color);
 }
 .educationDisplayTitle{
@@ -54,30 +54,38 @@
     grid-template-rows: 1fr 1fr;
     margin-left: 20px;
     margin-right: 20px;
-    gap:10px;
+    column-gap: 10px;
     align-items: center;
 }
 .experienceInfo{
     display: grid;
     grid-template-columns: 0.5fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr;
     margin-left: 20px;
     margin-right: 20px;
-    gap:10px;
+    column-gap: 10px;
     align-items: center;
+    justify-content: flex-start;
 }
 .infoDate{
-    justify-self: flex-start;
+    align-self: flex-start;
     font-size: small;
 }
 .infoTitle{
     justify-self: flex-start;
-    font-size: larger;
+    font-size: medium;
     font-weight: bold;
 }
 .infoLocation{
     justify-self: flex-start;
+    font-size: smaller;
 }
 .infoDescription{
+    justify-self: flex-start;
+    font-size: smaller;
+}
+.infoTitlePosition{
+    display: flex;
+    flex-direction: column;
     justify-self: flex-start;
 }

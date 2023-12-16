@@ -93,3 +93,11 @@
     justify-content: space-around;
     gap: 5px;
 }
+.buttonInit{
+    display: flex;
+    gap:10px;
+    font-size: smaller;
+}
+.buttonInitClear{
+    color: red;
+}

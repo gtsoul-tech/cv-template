@@ -79,7 +79,6 @@ function ExperienceForm(props){
                     </div>:null}
 
                 </>: null}
-                          {console.log(props.showBoth)}
                     {showExperienceForm && !props.showBoth.edu && props.showBoth.exp? <>
                         <SectionExpForm 
                         handleSetShowExperienceForm={handleSetShowExperienceForm}

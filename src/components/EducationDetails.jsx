@@ -20,7 +20,7 @@ function EducationDetails(props){
     return(
         <div className='sectionDisplay'>
         {props.degrees.length > 1 ? (
-            <div>
+            <>
             <h2 className='educationDisplayTitle'> Education </h2>
             {props.degrees.map((current)=>{
                 return (
@@ -36,8 +36,8 @@ function EducationDetails(props){
                     </div>
                 );
             })}
-                
-            </div>
+            </>
+            
                 ) : (
                     <div>{' '}
                     </div>

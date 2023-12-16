@@ -185,6 +185,130 @@ function App() {
   function handleCancelExperiences(){
     handleResetExperiences()
   }
+  function handleLoadExample(){
+    setDegrees(// Replace the state
+      [ // with a new array
+      {
+        id: 0,
+        degree: {
+          school: "University of Mock",
+          degreeTitle: "Bachelor of Mockology",
+          startDate: "09/15",
+          endDate: "05/19",
+          location: "Mock City, KM",
+        },
+      },
+      {
+        id: 1,
+        degree: {
+          school: "Mock State University",
+          degreeTitle: "Master of Mock Science",
+          startDate: "01/20",
+          endDate: "12/22",
+          location: "Mock Town, KM",
+        },
+      },
+      {
+        id: 2,
+        degree: {
+          school: "",
+          degreeTitle: "",
+          startDate: "",
+          endDate: "",
+          location: "",
+        },
+      },
+      ]
+    );
+    
+    setExperiences(// Replace the state
+      [ // with a new array
+      {
+        id: 0,
+        experience: {
+          company: "MockCorp",
+          position: "Software Engineer",
+          startDate: "06/19",
+          endDate: "12/21",
+          location: "Mockville, KM",
+          description: "Led cross-functional teams in the development of cutting-edge artificial intelligence applications, leveraging natural language processing and machine learning. Collaborated with clients in finance and healthcare to deliver innovative solutions that streamline data analysis and decision-making processes.",
+        },
+      },
+      {
+        id: 1,
+        experience: {
+          company: "TechMock Solutions",
+          position: "Senior Developer",
+          startDate: "01/22",
+          endDate: "06/23",
+          location: "Mockburg, KM",
+          description: "Managed end-to-end software development lifecycle for a series of e-commerce platforms, enhancing user experience and optimizing performance. Spearheaded the integration of advanced payment gateways and implemented responsive design principles, resulting in a 20% increase in user engagement and a 15% boost in conversion rates.",
+        },
+      },
+      {
+        id: 2,
+        experience: {
+          company: "",
+          position: "",
+          startDate: "",
+          endDate: "",
+          location: "",
+          description: "",
+        },
+      },
+      ]
+    );
+    degreeId=2;
+    experienceId=2;
+    setPerson({
+      fullName: "John Doe",
+      email: "john.doe@example.com",
+      phoneNumber: "123-456-7890",
+      address: "123 Main Street",
+    })
+  }
+  function handleClear(){
+    setDegrees(// Replace the state
+      [ // with a new array
+     
+      {
+        id: 0,
+        degree: {
+          school: "",
+          degreeTitle: "",
+          startDate: "",
+          endDate: "",
+          location: "",
+        },
+      },
+      ]
+    );
+    
+    setExperiences(// Replace the state
+      [ // with a new array
+      
+      {
+        id: 0,
+        experience: {
+          company: "",
+          position: "",
+          startDate: "",
+          endDate: "",
+          location: "",
+          description: "",
+        },
+      },
+      ]
+    );
+    degreeId=0;
+    experienceId=0;
+    setPerson({
+      fullName: "",
+      email: "",
+      phoneNumber: "",
+      address: "",
+    })
+  }
 
 
 
@@ -215,6 +339,8 @@ function App() {
         handleCancelExperiences={handleCancelExperiences}
         handleSetShowBoth={handleSetShowBoth}
         showBoth={showBoth}
+        handleLoadExample={handleLoadExample}
+        handleClear={handleClear}
         ></EditSide>
         
         <DisplaySide
