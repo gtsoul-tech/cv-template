@@ -17,8 +17,8 @@ function EducationDetails(props){
     degrees.push(degree2);
     */
    
-    return(<>
-        <div className='educationDisplay'>
+    return(
+        <div className='sectionDisplay'>
         {props.degrees.length > 1 ? (
             <div>
             <h2 className='educationDisplayTitle'> Education </h2>
@@ -43,8 +43,7 @@ function EducationDetails(props){
                     </div>
                 )}
             
-        </div>
-    </>)
+        </div>)
 }
 EducationDetails.propTypes = {
     degrees:PropTypes.array,
