@@ -1,6 +1,6 @@
-//import { useState } from 'react'
+
 import './App.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import EditSide from './components/EditSide'
 import DisplaySide from './components/DisplaySide'
 let degreeId=0;
@@ -265,6 +265,30 @@ function App() {
       email: "john.doe@example.com",
       phoneNumber: "123-456-7890",
       address: "123 Main Street",
+      handleChangeAddress:function(e) {
+        setPerson((prevPerson)=> ({
+          ...prevPerson, // Copy the old fields
+          address: e.target.value // But override this one
+        }));
+      },
+      handleChangeFullName:function(e) {
+        setPerson((prevPerson)=> ({
+          ...prevPerson, // Copy the old fields
+          fullName: e.target.value // But override this one
+        }));
+      },
+      handleChangeEmail:function(e) {
+        setPerson((prevPerson)=> ({
+          ...prevPerson, // Copy the old fields
+          email: e.target.value // But override this one
+        }));
+      },
+      handleChangePhoneNumber:function(e) {
+        setPerson((prevPerson)=> ({
+          ...prevPerson, // Copy the old fields
+          phoneNumber: e.target.value // But override this one
+        }));
+      }
     })
   }
   function handleClear(){
@@ -307,10 +331,32 @@ function App() {
       email: "",
       phoneNumber: "",
       address: "",
+      handleChangeAddress:function(e) {
+        setPerson((prevPerson)=> ({
+          ...prevPerson, // Copy the old fields
+          address: e.target.value // But override this one
+        }));
+      },
+      handleChangeFullName:function(e) {
+        setPerson((prevPerson)=> ({
+          ...prevPerson, // Copy the old fields
+          fullName: e.target.value // But override this one
+        }));
+      },
+      handleChangeEmail:function(e) {
+        setPerson((prevPerson)=> ({
+          ...prevPerson, // Copy the old fields
+          email: e.target.value // But override this one
+        }));
+      },
+      handleChangePhoneNumber:function(e) {
+        setPerson((prevPerson)=> ({
+          ...prevPerson, // Copy the old fields
+          phoneNumber: e.target.value // But override this one
+        }));
+      }
     })
   }
-
-
 
   const [showBoth, setShowBoth] = useState({ edu:false, exp:false});
   function handleSetShowBoth(edu,exp){
@@ -319,6 +365,23 @@ function App() {
       exp:exp
     })
   }
+
+  const [fontColorLayout, setFontColorLayout] = useState({
+    font: 'sans',
+    color: '#213547',
+    layout: 'top',
+  })
+  function handleSetFontColorLayout(font='sans',color='#213547',layout='top'){
+    setFontColorLayout({
+      font: font,
+      color: color,
+      layout: layout,
+    })
+  }
+  useEffect(
+    handleLoadExample, // <- function that will run on every dependency update
+    [] // <-- empty dependency array
+  ) 
   return (
     <>
       <div className='app'>
@@ -341,12 +404,15 @@ function App() {
         showBoth={showBoth}
         handleLoadExample={handleLoadExample}
         handleClear={handleClear}
+        handleSetFontColorLayout={handleSetFontColorLayout}
+        fontColorLayout={fontColorLayout}
         ></EditSide>
         
         <DisplaySide
         person={person}
         degrees={degrees}
         experiences={experiences}
+        fontColorLayout={fontColorLayout}
         ></DisplaySide>
       </div>
       
