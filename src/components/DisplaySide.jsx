@@ -1,11 +1,19 @@
 import PersonalDetails from './PersonalDetails'
 import EducationDetails from './EducationDetails';
 import ExperienceDetails from './ExperienceDetails';
-import '../styles/DisplaySide.css'
+import '../styles/DisplaySide.css';
 import PropTypes from 'prop-types';
 function DisplaySide({person,degrees,experiences,fontColorLayout}) {
-  const class1 = 'font-face-didot'
-  
+  let class1;
+  if(fontColorLayout.font == "mono"){
+    class1="displayFontMono";
+  }
+  else if(fontColorLayout.font == "PTSerif"){
+    class1="displayFontPTSerif";
+  }
+  else {
+    class1="displayFontSansSerif";
+  }
   return (
     <>
     <div className={`displaySide ${class1}`}>

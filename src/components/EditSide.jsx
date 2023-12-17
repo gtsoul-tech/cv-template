@@ -62,19 +62,19 @@ function EditSide(props) {
             <div className='cardTitle'>Font</div>
             <div className='cardComponents'>
               <button
-              onClick={()=> {props.handleSetFontColorLayout('sans',props.fontColorLayout.color,props.fontColorLayout.layout)}}
+              onClick={()=> {props.handleSetFontColorLayout('mono',props.fontColorLayout.color,props.fontColorLayout.layout)}}
               >
                 <div>Aa</div>
-                <div>Sans</div>
+                <div>Mono</div>
               </button>
               <button
-              onClick={()=> {props.handleSetFontColorLayout('sans',props.fontColorLayout.color,props.fontColorLayout.layout)}}
+              onClick={()=> {props.handleSetFontColorLayout('PTSerif',props.fontColorLayout.color,props.fontColorLayout.layout)}}
               >
                 <div>Aa</div>
-                <div>Sans</div>
+                <div>PTSerif</div>
               </button>
               <button
-              onClick={()=> {props.handleSetFontColorLayout('sans',props.fontColorLayout.color,props.fontColorLayout.layout)}}
+              onClick={()=> {props.handleSetFontColorLayout('sans-serif',props.fontColorLayout.color,props.fontColorLayout.layout)}}
               >
                 <div>Aa</div>
                 <div>Sans</div>

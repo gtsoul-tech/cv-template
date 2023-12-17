@@ -76,7 +76,7 @@
 }
 .symbolButton{
     font-size: larger;
-    font-weight: bolder;
+    font-weight: bolder 1000;
 }
 .inputsEducation{
     border-bottom-left-radius: 20px;
@@ -112,7 +112,7 @@
 }
 .cardTitle{
     font-size: larger;
-    font-weight: bold;
+    font-weight: bold 700;
 }
 .cardComponents{
     display: flex;

@@ -16,11 +16,5 @@ body{
   display: grid;
   grid-template-columns: 1fr 3fr;
   padding: 2rem;
-  font-family: 'MyWebFont', Fallback, sans-serif;
-}
-.font-face-didot {
-  font-family: "GFSDidot-Regular";
-}
-.font-face-JosefinSans-Italic-VariableFont_wght {
-  font-family: "JosefinSans-Italic-VariableFont_wght";
+  font-family: sans-serif;
 }

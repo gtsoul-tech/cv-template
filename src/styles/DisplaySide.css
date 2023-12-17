@@ -1,23 +1,21 @@
 .displaySide{
-    
     background-color: var(--main-bg-color);
     margin-left: 20px;
     min-width: 520px;
-    max-width: 640px;
-    
+    max-width: 1640px;
     min-height: 780px;
-    max-height: 900px;
+    max-height: 1900px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
+
 .top{
     display: flex;
     flex-direction: column;
     background-color: var(--main-bg-color);
-    min-width: inherit;
-    max-width: inherit;
-    
-    min-height: inherit;
-    max-height: inherit;
+    min-width: 520px;
+    max-width: 1640px;
+    min-height: 780px;
+    max-height: 1900px;
     
 }
 .left{
@@ -25,7 +23,6 @@
     background-color: var(--main-bg-color);
     min-width: inherit;
     max-width: inherit;
-    
     min-height: inherit;
     max-height: inherit;
 }
@@ -34,7 +31,6 @@
     background-color: var(--main-bg-color);
     min-width: inherit;
     max-width: inherit;
-    
     min-height: inherit;
     max-height: inherit;
 }
@@ -46,7 +42,6 @@
 .displayComponent{
     display: flex;
     flex-direction: column;
-    flex:2;
 }
 .personalDisplay{
     display: flex;
@@ -56,10 +51,18 @@
     padding: 20px;
     flex: 1;
 }
+.top >.personalDisplay {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(14, 55, 78);
+    color: var(--main-bg-color);
+    padding: 20px;
+    max-height: 100px;
+}
 .personalName{
     padding-bottom: 10px;
     font-size: x-large;
-    font-weight: bold;
+    font-weight: bold 700;
 }
 .restPersonalDetails{
     display: flex;
@@ -78,7 +81,6 @@
     flex-direction: column;
     gap: 20px;
     background-color: var(--main-bg-color);
-    flex: 2;
     min-height: 70px;
 }
 .educationDisplayTitle{
@@ -107,6 +109,7 @@
     align-items: center;
 }
 .infoDate{
+    text-align: start;
     align-self: flex-start;
     font-size: small;
 }
@@ -114,7 +117,7 @@
     display: flex;
     justify-self: flex-start;
     font-size: medium;
-    font-weight: bold;
+    font-weight: bold 700;
 }
 .infoLocation{
     display: flex;
@@ -131,4 +134,18 @@
     display: flex;
     flex-direction: column;
     justify-self: flex-start;
+}
+
+
+
+
+
+.displayFontMono{
+    font-family: "mono", "monoBold", sans-serif;;
+}
+.displayFontSansSerif{
+    font-family: sans-serif;
+}
+.displayFontPTSerif{
+    font-family: "PTSerif", "PTSerifBold", sans-serif;;
 }
