@@ -391,7 +391,7 @@ function App() {
   return (
     <>
       <button style={{ marginTop:"10px",marginBot:"0px"}}onClick={() => generatePDF(targetRef, {filename: 'resume.pdf'})}>
-            Download Resume Image
+            Download Resume
       </button>
       <div className='app'>
         <EditSide
