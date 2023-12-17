@@ -8,9 +8,11 @@ function PersonalDetails(props){
     const email = props.person.email;
     const phoneNumber = props.person.phoneNumber;
     const address = props.person.address;
-    
+    const mystyle = {
+        backgroundColor: props.backgroundColor
+    };
     return(<>
-        <div className='personalDisplay'>
+        <div className='personalDisplay' style={mystyle}>
             <div className="personalName">{fullName}</div>
             <div className="restPersonalDetails">
                 {email!='' ? (
@@ -49,6 +51,7 @@ PersonalDetails.propTypes = {
     fullName: PropTypes.string,
     email: PropTypes.string,
     phoneNumber:PropTypes.string,
-    address:PropTypes.string
+    address:PropTypes.string,
+    backgroundColor:PropTypes.string,
 }
 export default PersonalDetails

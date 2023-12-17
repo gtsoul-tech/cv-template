@@ -5,13 +5,16 @@ import '../styles/DisplaySide.css'
 import PropTypes from 'prop-types';
 function DisplaySide({person,degrees,experiences,fontColorLayout}) {
   const class1 = 'font-face-didot'
-
+  
   return (
     <>
     <div className={`displaySide ${class1}`}>
       {fontColorLayout.layout === 'top' ?
       <div className={`top`}>
-        <PersonalDetails person={person}></PersonalDetails>
+        <PersonalDetails 
+          person={person}
+          backgroundColor={fontColorLayout.color}
+        ></PersonalDetails>
         <EducationDetails degrees={degrees}></EducationDetails>
         <ExperienceDetails experiences={experiences}></ExperienceDetails>
       </div>
@@ -19,7 +22,10 @@ function DisplaySide({person,degrees,experiences,fontColorLayout}) {
       fontColorLayout.layout=== 'left' ? 
       <div className={`left`}>
         <div className='displayComponentHeader'>
-          <PersonalDetails person={person}></PersonalDetails>
+          <PersonalDetails 
+          person={person}
+          backgroundColor={fontColorLayout.color}
+          ></PersonalDetails>
         </div>
         <div className='displayComponent'>
           <EducationDetails degrees={degrees}></EducationDetails>
@@ -36,7 +42,10 @@ function DisplaySide({person,degrees,experiences,fontColorLayout}) {
           <ExperienceDetails experiences={experiences}></ExperienceDetails>
         </div>
         <div className='displayComponentHeader'>
-          <PersonalDetails person={person}></PersonalDetails>
+          <PersonalDetails 
+          person={person}
+          backgroundColor={fontColorLayout.color}
+          ></PersonalDetails>
         </div>
       </div>
       :
