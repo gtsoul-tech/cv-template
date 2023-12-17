@@ -17,6 +17,7 @@ function EditSide(props) {
       <div className='editSide'>
         <div className='buttonInit'>
           <button onClick={() => setShow(!show)}>Resume/Customize</button>
+          
         </div>
         {show ? <>
           <div className='buttonInit'>

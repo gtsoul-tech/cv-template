@@ -1,6 +1,6 @@
 .displaySide{
     background-color: var(--main-bg-color);
-    margin-left: 20px;
+    
     min-width: 520px;
     max-width: 1640px;
     min-height: 780px;

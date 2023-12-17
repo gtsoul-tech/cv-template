@@ -1,8 +1,9 @@
 
 import './App.css'
-import { useState, useEffect } from 'react';
-import EditSide from './components/EditSide'
-import DisplaySide from './components/DisplaySide'
+import { useState, useEffect, useRef } from 'react';
+import EditSide from './components/EditSide';
+import DisplaySide from './components/DisplaySide';
+import generatePDF from 'react-to-pdf';
 let degreeId=0;
 let experienceId=0;
 function App() {
@@ -381,9 +382,17 @@ function App() {
   useEffect(
     handleLoadExample, // <- function that will run on every dependency update
     [] // <-- empty dependency array
-  ) 
+  )
+
+
+  const targetRef = useRef();
+
+
   return (
     <>
+      <button style={{ marginTop:"10px",marginBot:"0px"}}onClick={() => generatePDF(targetRef, {filename: 'resume.pdf'})}>
+            Download Resume Image
+      </button>
       <div className='app'>
         <EditSide
         person={person}
@@ -407,13 +416,15 @@ function App() {
         handleSetFontColorLayout={handleSetFontColorLayout}
         fontColorLayout={fontColorLayout}
         ></EditSide>
-        
+        <div ref={targetRef}>
         <DisplaySide
+        
         person={person}
         degrees={degrees}
         experiences={experiences}
         fontColorLayout={fontColorLayout}
         ></DisplaySide>
+        </div>
       </div>
       
     </>
