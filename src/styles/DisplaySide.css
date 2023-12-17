@@ -1,22 +1,60 @@
 .displaySide{
-    display: flex;
-    flex-direction: column;
+    
     background-color: var(--main-bg-color);
     margin-left: 20px;
     min-width: 520px;
-    max-width: 540px;
+    max-width: 640px;
     
     min-height: 780px;
-    max-height: 800px;
+    max-height: 900px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
-
+.top{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-bg-color);
+    min-width: inherit;
+    max-width: inherit;
+    
+    min-height: inherit;
+    max-height: inherit;
+    
+}
+.left{
+    display: flex;
+    background-color: var(--main-bg-color);
+    min-width: inherit;
+    max-width: inherit;
+    
+    min-height: inherit;
+    max-height: inherit;
+}
+.right{
+    display: flex;
+    background-color: var(--main-bg-color);
+    min-width: inherit;
+    max-width: inherit;
+    
+    min-height: inherit;
+    max-height: inherit;
+}
+.displayComponentHeader{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+.displayComponent{
+    display: flex;
+    flex-direction: column;
+    flex:2;
+}
 .personalDisplay{
     display: flex;
     flex-direction: column;
     background-color: rgb(14, 55, 78);
     color: var(--main-bg-color);
     padding: 20px;
+    flex: 1;
 }
 .personalName{
     padding-bottom: 10px;
@@ -40,6 +78,8 @@
     flex-direction: column;
     gap: 20px;
     background-color: var(--main-bg-color);
+    flex: 2;
+    min-height: 70px;
 }
 .educationDisplayTitle{
     background-color: rgb(238, 241, 243);
