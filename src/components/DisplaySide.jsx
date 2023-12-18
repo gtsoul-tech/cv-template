@@ -23,8 +23,14 @@ function DisplaySide({person,degrees,experiences,fontColorLayout}) {
           person={person}
           backgroundColor={fontColorLayout.color}
         ></PersonalDetails>
-        <EducationDetails degrees={degrees}></EducationDetails>
-        <ExperienceDetails experiences={experiences}></ExperienceDetails>
+        <EducationDetails 
+        degrees={degrees}
+        backgroundColor={fontColorLayout.color}
+        ></EducationDetails>
+        <ExperienceDetails 
+        experiences={experiences}
+        backgroundColor={fontColorLayout.color}
+        ></ExperienceDetails>
       </div>
       :
       fontColorLayout.layout=== 'left' ? 
