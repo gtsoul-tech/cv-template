@@ -42,8 +42,10 @@ function DisplaySide({person,degrees,experiences,fontColorLayout}) {
           ></PersonalDetails>
         </div>
         <div className='displayComponent'>
-          <EducationDetails degrees={degrees}></EducationDetails>
-          <ExperienceDetails experiences={experiences}></ExperienceDetails>
+          <EducationDetails degrees={degrees}
+          backgroundColor={fontColorLayout.color}></EducationDetails>
+          <ExperienceDetails experiences={experiences}
+          backgroundColor={fontColorLayout.color}></ExperienceDetails>
         </div>
       </div>
       
@@ -52,8 +54,10 @@ function DisplaySide({person,degrees,experiences,fontColorLayout}) {
       <div className={`right`}>
         
         <div className='displayComponent'>
-          <EducationDetails degrees={degrees}></EducationDetails>
-          <ExperienceDetails experiences={experiences}></ExperienceDetails>
+          <EducationDetails degrees={degrees}
+          backgroundColor={fontColorLayout.color}></EducationDetails>
+          <ExperienceDetails experiences={experiences}
+          backgroundColor={fontColorLayout.color}></ExperienceDetails>
         </div>
         <div className='displayComponentHeader'>
           <PersonalDetails 
